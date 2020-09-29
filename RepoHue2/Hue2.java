@@ -24,7 +24,9 @@ public class Hue2{
         for (String string : listeS) {
             System.out.println(listeS);
         }
+        listeS.forEach((String s) -> System.out.println(s));
         
+        listeS.forEach(System.out :: println);
     }
     
     
