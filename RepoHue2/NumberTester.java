@@ -14,24 +14,24 @@ public class NumberTester {
         boolean testNumber(int number);
     }
     private String fileName;
-    private NumberTester oddTester;
-    private NumberTester primeTester;
-    private NumberTester palindromeTester;
+    private NumberTest oddTester;
+    private NumberTest primeTester;
+    private NumberTest palindromeTester;
     
     
     public NumberTester(String fleName){
         this.fileName = fileName;
     }
     
-    public void setOddEvenTester(NumberTester oddTester){
+    public void setOddEvenTester(NumberTest oddTester){
         this.oddTester = oddTester;
    }
     
-    public void setPrimeTester(NumberTester primeTester){
+    public void setPrimeTester(NumberTest primeTester){
         this.primeTester = primeTester;
     }
     
-    public void setPalindromeTester(NumberTester palindromeTester){
+    public void setPalindromeTester(NumberTest palindromeTester){
         this.palindromeTester = palindromeTester;
     }
     
