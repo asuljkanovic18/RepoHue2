@@ -39,8 +39,16 @@ public class Number {
         protected CalculationOperation multi;
         protected CalculationOperation div;
 
+        public AbstractCalculator(CalculationOperation add, CalculationOperation sub, CalculationOperation multi, CalculationOperation div) {
+            this.add = add;
+            this.sub = sub;
+            this.multi = multi;
+            this.div = div;
+        }
         
-        
-        
+        public abstract Number add(Number a, Number b);
+        public abstract Number sub(Number a, Number b);
+        public abstract Number multi(Number a, Number b);
+        public abstract Number div(Number a, Number b);
     }
 }
