@@ -13,6 +13,11 @@ public class Main {
         public static void main(String[] args) {
         NumberTester nTester = new NumberTester("LukaDoncic.txt");
         nTester.setOddEvenTester(x -> {return x%2==0;});
-        nTester.setPrimeTester(p-> {return ;});
+        nTester.setPrimeTester(p-> {for (int i = 0; i < p+1; i++) {
+                if(p==i*i||p%i==0){
+                    return false;
+                }
+                };return true;});
+        
     }
 }
