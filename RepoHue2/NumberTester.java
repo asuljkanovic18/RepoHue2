@@ -43,16 +43,19 @@ public class NumberTester {
     
     public void testFile() throws FileNotFoundException, IOException{
         setOddEvenTester(x -> {return x%2==0;});
-        setPrimeTester(p-> {for (int i = 0; i < p+1; i++) {
-                if(p==i*i||p%i==0){
+        setPrimeTester(p-> {
+            if(!oddTester.testNumber(p)) return true;
+            for (int i = 2; i < p+1; i++) {
+                if(p%i==0){
                     return false;
                 }
-                };return true;}); 
+                }return true;}); 
             setPalindromeTester(pa -> {
             String left = String.valueOf(pa); 
             String right = new StringBuilder(left).reverse().toString();
             return left.equals(right);
             });
+            try{
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             int row = Integer.parseInt(br.readLine());
             int now = 0;
@@ -61,8 +64,8 @@ public class NumberTester {
             int[] numbers = new int[2];
             
             while(s != null && now < row){
-                numbers[0] = Integer.parseInt(s.split("")[0]);
-                numbers[1] = Integer.parseInt(s.split("")[1]);
+                numbers[0] = Integer.parseInt(s.split(" ")[0]);
+                numbers[1] = Integer.parseInt(s.split(" ")[1]);
                 
                 int active = numbers[0];
                 int finish = numbers[1];
@@ -70,9 +73,9 @@ public class NumberTester {
                 switch(active){
                     case 1:
                         if(this.oddTester.testNumber(finish)==true){
-                            erg += " ODD";
+                            erg += " EVEN";
                         }else{
-                            erg += " EVEN";}
+                            erg += " ODD";}
                         break;
                     case 2:
                         if(this.primeTester.testNumber(finish)==true){
@@ -91,10 +94,15 @@ public class NumberTester {
                 }
                 System.out.println(erg);
                 now++;
-                s = br.readLine().trim();
+                try{
+                  s = br.readLine().trim();  
+                }catch(NullPointerException ignored){}
+                
             }
             
-    }
+            }catch(IOException e) {
+            e.printStackTrace();
+        }}
     
     
 }

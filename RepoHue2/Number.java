@@ -9,20 +9,19 @@ package hue2.RepoHue2;
  *
  * @author anels
  */
-public class Number/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package hue2.RepoHue2;
-
-/**
- *
- * @author anels
- */
-public class Number
+public class Number{
     private double a;
     private double b;
+
+    public Number() {
+    }
+
+    public Number(double a, double b) {
+        this.a = a;
+        this.b = b;
+    }
+    
+    
 
     public double getA() {
         return a;
@@ -40,7 +39,15 @@ public class Number
         this.b = b;
     }
 
-    public interface CalulationOperation{
-        Number calc(Number x, Numbe    }
+    public interface CalculationOperation{
+        Number calc(Number x, Number y);
+    }
+
+    @Override
+    public String toString() {
+        return "Number{" + "a=" + a + ", b=" + b + '}';
+    }
+    
+    
 }
 

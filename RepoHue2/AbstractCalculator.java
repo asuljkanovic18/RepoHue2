@@ -10,10 +10,12 @@ package hue2.RepoHue2;
  * @author anels
  */
 public abstract class AbstractCalculator {
-     protected Number.CalculationOperation add ;
+        protected Number.CalculationOperation add ;
         protected Number.CalculationOperation sub;
         protected Number.CalculationOperation multi;
         protected Number.CalculationOperation div;
+        
+        
 
         public AbstractCalculator(Number.CalculationOperation add, Number.CalculationOperation sub, Number.CalculationOperation multi, Number.CalculationOperation div) {
             this.add = add;

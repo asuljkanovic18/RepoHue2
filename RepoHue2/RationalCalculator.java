@@ -17,22 +17,22 @@ public class RationalCalculator extends AbstractCalculator{
 
     @Override
     public Number add(Number a, Number b) {
-        Number n = new Number();
+        return null;
     }
 
     @Override
     public Number sub(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
     @Override
     public Number multi(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null; 
     }
 
     @Override
     public Number div(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
     
     
