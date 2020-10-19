@@ -5,19 +5,31 @@
  */
 package hue2.RepoHue2;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 /**
  *
  * @author anels
  */
 public class Main {
-        public static void main(String[] args) {
-        NumberTester nTester = new NumberTester("LukaDoncic.txt");
-        nTester.setOddEvenTester(x -> {return x%2==0;});
-        nTester.setPrimeTester(p-> {for (int i = 0; i < p+1; i++) {
-                if(p==i*i||p%i==0){
-                    return false;
-                }
-                };return true;});
         
+    public static void main(String[] args) throws IOException {
+            Scanner s = new Scanner(System.in);
+            System.out.println("Choose a number");
+            System.out.println("1 ... NumberTester");
+            System.out.println("2 ... Calculators");
+            
+            int number;
+            number = Integer.parseInt(s.next());
+            switch(number){
+                case 1: NumberTester ntester = new NumberTester("LukaDoncic.txt");
+                        ntester.testFile();
+                        break;
+                case 2: 
+            }
+        }
+    public void calculators(){
+            
     }
 }
